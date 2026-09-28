@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="meta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Thư Mời Dự Tiệc Sinh Nhật • Nguyễn Thanh Tâm ✨</title>
+  <meta name="description" content="Thư mời dự tiệc sinh nhật Nguyễn Thanh Tâm (06/10/2003). Đêm tiệc mừng tuổi 23 tại Ốc Đêm Chú Kiệt 5 Garden ngày 03/10 lúc 19:30!" />
+  
+  <!-- Google Fonts: Be Vietnam Pro (Chuẩn Tiếng Việt không lỗi font) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background Particle Canvas (Subtle Particles) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Floating Music Toggle Button (Bottom-Right Corner) -->
+  <button id="btn-music" class="floating-music-btn" title="Bật/Tắt Nhạc Nền Happy Birthday">
+    <i class="fa-solid fa-music music-icon"></i>
+  </button>
+
+  <!-- ================= SCENE 1: MINIMALIST SEALED ENVELOPE LANDING ================= -->
+  <section id="scene-intro" class="scene active">
+    <div class="envelope-landing-wrapper">
+      
+      <!-- Outer Card Envelope -->
+      <div class="envelope-card" id="gift-box-trigger">
+        <div class="wax-seal-badge">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <div class="envelope-header-tag">BIRTHDAY INVITATION</div>
+        <h1 class="envelope-host-title">Nguyễn Thanh Tâm</h1>
+        <p class="envelope-subtitle">Trân Trọng Kính Mời</p>
+        
+        <div class="guest-name-pill">
+          <i class="fa-solid fa-heart"></i> <span id="intro-guest-name">Anh Em & Bạn Bè</span> <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <p class="envelope-event-hint">Đến dự buổi tiệc mừng sinh nhật tuổi 23 (06/10/2003)</p>
+
+        <div class="open-envelope-btn">
+          <i class="fa-solid fa-envelope-open"></i> Chạm Để Mở Thư Mời 💌
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SCENE 2: MINIMALIST META INVITATION CONTENT ================= -->
+  <main id="scene-card" class="scene hidden">
+    
+    <!-- Hero Invitation Header Card -->
+    <section class="invitation-hero-card">
+      <div class="hero-badge-tag">BIRTHDAY CELEBRATION 🥂</div>
+      <h1 class="hero-main-title">THƯ MỜI DỰ TIỆC SINH NHẬT</h1>
+      
+      <div class="host-profile-block">
+        <p class="invitation-text-salutation">
+          Thân gửi <strong id="card-guest-name" class="highlight-guest">Anh Em & Bạn Bè</strong>,
+        </p>
+        <p class="invitation-body-intro">
+          Nhân dịp chào đón tuổi 23 (sinh ngày <strong>06/10/2003</strong>), Nguyễn Thanh Tâm trân trọng kính mời bạn đến tham dự buổi tiệc sinh nhật thân mật được tổ chức sớm vào <strong>Tối Thứ Bảy - 03/10/2026</strong> để bạn bè cùng quẩy đông đủ nhất!
+        </p>
+      </div>
+
+      <!-- Luxury Modern Countdown Timer Section -->
+      <div class="luxury-countdown-card">
+        <div class="countdown-badge"><i class="fa-solid fa-hourglass-half"></i> ĐẾM NGƯỢC ĐẾN ĐÊM TIỆC (19:30 • 03/10)</div>
+        <div class="countdown-clock-grid">
+          <div class="clock-box">
+            <div class="clock-num-wrap"><span id="days">00</span></div>
+            <span class="clock-label">Ngày</span>
+          </div>
+          <div class="clock-sep">:</div>
+          <div class="clock-box">
+            <div class="clock-num-wrap"><span id="hours">00</span></div>
+            <span class="clock-label">Giờ</span>
+          </div>
+          <div class="clock-sep">:</div>
+          <div class="clock-box">
+            <div class="clock-num-wrap"><span id="minutes">00</span></div>
+            <span class="clock-label">Phút</span>
+          </div>
+          <div class="clock-sep">:</div>
+          <div class="clock-box">
+            <div class="clock-num-wrap"><span id="seconds">00</span></div>
+            <span class="clock-label">Giây</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section (Time, Address, Location) -->
+    <section class="card-section">
+      <div class="section-title-wrap">
+        <h2 class="section-gold-title"><i class="fa-solid fa-calendar-check"></i> Thông Tin Đêm Tiệc</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="details-triple-grid">
+        <!-- Card 1: Time -->
+        <div class="info-box">
+          <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Thời Gian Tổ Chức</h3>
+          <p class="info-main">19:30 • Thứ Bảy</p>
+          <p class="info-highlight">Ngày 03 Tháng 10 Năm 2026</p>
+          <p class="info-sub">(Tổ chức sớm cho tiện bạn bè tham gia!)</p>
+        </div>
+
+        <!-- Card 2: Location -->
+        <div class="info-box">
+          <div class="info-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Địa Điểm Quán Tiệc</h3>
+          <p class="info-main">Ốc Đêm Chú Kiệt 5 Garden</p>
+          <p class="info-sub">120 Man Thiện, Phường Tăng Nhơn Phú, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=%E1%BA%A0c+%C4%90%C3%AAm+Ch%C3%BA+Ki%E1%BB%87t+5+Garden+120+Man+Thi%E1%BB%87n+Th%E1%BB%A7+%C4%90%E1%BB%A9c" target="_blank" class="maps-btn"><i class="fa-solid fa-map-location-dot"></i> Mở Google Maps Chỉ Đường</a>
+        </div>
+
+        <!-- Card 3: Dresscode & Atmosphere -->
+        <div class="info-box">
+          <div class="info-icon"><i class="fa-solid fa-beer-mug-empty"></i></div>
+          <h3>Không Khí Tiệc</h3>
+          <p class="info-main">Thoải Mái & Quẩy Hết Mình</p>
+          <p class="info-sub">Trang phục tự do, thoải mái ăn ngon, cụng ly & vui vẻ hết nấc cùng Tâm! ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Confirmation Section -->
+    <section class="card-section">
+      <div class="section-title-wrap">
+        <h2 class="section-gold-title"><i class="fa-solid fa-clipboard-check"></i> Xác Nhận Tham Dự (RSVP)</h2>
+        <p class="section-sub-desc">Vui lòng phản hồi sớm để Tâm giữ chỗ & đặt bàn chu đáo nhất nhé!</p>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="rsvp-layout-grid">
+        <form id="rsvp-form" class="rsvp-glass-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rsvp-guest-name"><i class="fa-solid fa-user"></i> Tên của bạn:</label>
+              <input type="text" id="rsvp-guest-name" placeholder="VD: Hoàng Nam, Tuấn..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-count"><i class="fa-solid fa-user-group"></i> Số người đi cùng:</label>
+              <select id="rsvp-count">
+                <option value="1">Đi 1 mình (Sẵn sàng cụng ly!)</option>
+                <option value="2">Đi 2 người (+1 bạn/người yêu)</option>
+                <option value="3">Đi nhóm 3+ người</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-circle-question"></i> Bạn sẽ đến quẩy cùng Tâm chứ?</label>
+            <div class="radio-options">
+              <label class="radio-card">
+                <input type="radio" name="rsvp-status" value="yes" checked />
+                <span>Chắc chắn sẽ tham dự 🥳</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="rsvp-status" value="maybe" />
+                <span>Có thể đến trễ một chút ⏰</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="rsvp-status" value="no" />
+                <span>Rất tiếc bận việc không tới được 🥹</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-message"><i class="fa-solid fa-pen-nib"></i> Lời nhắn gửi tới Nguyễn Thanh Tâm:</label>
+            <textarea id="rsvp-message" rows="3" placeholder="Gửi vài lời chúc hoặc lời nhắn cho Tâm nhé..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-invitation-btn">
+            <i class="fa-solid fa-paper-plane"></i> Gửi Phản Hồi Cho Tâm ✨
+          </button>
+        </form>
+
+        <div class="rsvp-confirmed-wall">
+          <h3><i class="fa-solid fa-users"></i> Khách Mời Đã Xác Nhận (<span id="rsvp-counter">0</span>)</h3>
+          <div class="rsvp-wall" id="rsvp-wall-grid">
+            <!-- Dynamically populated RSVPs -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Schedule -->
+    <section class="card-section">
+      <div class="section-title-wrap">
+        <h2 class="section-gold-title"><i class="fa-solid fa-timeline"></i> Lịch Trình Buổi Tiệc (Tối 03/10)</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="timeline-stepper">
+        <div class="timeline-card">
+          <div class="time-badge">19:30</div>
+          <div class="timeline-body">
+            <h4><i class="fa-solid fa-user-group"></i> Đón Khách & Ổn Định Bàn Tiệc</h4>
+            <p>Đón tiếp bạn bè tại Ốc Đêm Chú Kiệt 5 Garden, chụp ảnh kỷ niệm.</p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="time-badge">20:00</div>
+          <div class="timeline-body">
+            <h4><i class="fa-solid fa-wine-glass"></i> Khai Tiệc & Cụng Ly Chúc Mừng</h4>
+            <p>Tâm phát biểu cảm ơn, cùng cụng ly chúc mừng tuổi 23 và thưởng thức món ngon.</p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="time-badge">20:45</div>
+          <div class="timeline-body">
+            <h4><i class="fa-solid fa-cake-candles"></i> Thổi Nến & Cắt Bánh Sinh Nhật</h4>
+            <p>Hát vang Happy Birthday, Tâm thổi nến ước nguyện tuổi mới cùng mọi người.</p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="time-badge">21:15</div>
+          <div class="timeline-body">
+            <h4><i class="fa-solid fa-comments"></i> Trò Chuyện & Quẩy Tới Bến</h4>
+            <p>Giao lưu, trò chuyện vui vẻ và lưu giữ những kỷ niệm đẹp tuổi 23!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Candle Blow Section with User's IT Cake -->
+    <section class="card-section">
+      <div class="section-title-wrap">
+        <h2 class="section-gold-title"><i class="fa-solid fa-cake-candles"></i> Thổi Nến Mừng Sinh Nhật</h2>
+        <p class="section-sub-desc">Chạm vào các ngọn nến trên bánh để thổi nến mừng tuổi 23 cùng Nguyễn Thanh Tâm nhé!</p>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="cake-container">
+        <div class="cake-image-wrap">
+          <img src="assets/cake.jpg" alt="Nguyễn Thanh Tâm Bento IT Birthday Cake" class="cake-img" />
+          
+          <div class="flames-overlay" id="flames-container">
+            <div class="candle-flame active" style="left: 36%; top: 16%;" data-candle="1">
+              <div class="flame-core"></div>
+              <div class="flame-glow"></div>
+            </div>
+            <div class="candle-flame active" style="left: 43%; top: 14%;" data-candle="2">
+              <div class="flame-core"></div>
+              <div class="flame-glow"></div>
+            </div>
+            <div class="candle-flame active" style="left: 50%; top: 13%;" data-candle="3">
+              <div class="flame-core"></div>
+              <div class="flame-glow"></div>
+            </div>
+            <div class="candle-flame active" style="left: 57%; top: 14%;" data-candle="4">
+              <div class="flame-core"></div>
+              <div class="flame-glow"></div>
+            </div>
+            <div class="candle-flame active" style="left: 64%; top: 16%;" data-candle="5">
+              <div class="flame-core"></div>
+              <div class="flame-glow"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-controls">
+          <button id="btn-blow-candles" class="submit-invitation-btn">
+            <i class="fa-solid fa-wind"></i> Thổi Nến Mừng Tuổi 23 ✨
+          </button>
+          <button id="btn-relight-candles" class="secondary-outline-btn hidden">
+            <i class="fa-solid fa-fire"></i> Thắp Lại Nến 🔥
+          </button>
+        </div>
+
+        <div id="wish-revealed-banner" class="wish-banner hidden">
+          <i class="fa-solid fa-heart banner-icon"></i>
+          <h3>✨ Tâm Đã Thổi Nến & Cảm Ơn Bạn! ✨</h3>
+          <p>Sự hiện diện của bạn tại Ốc Đêm Chú Kiệt 5 Garden là món quà tuyệt vời nhất! 🥂</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polaroid Gallery with User's 3 Real Party Photos -->
+    <section class="card-section">
+      <div class="section-title-wrap">
+        <h2 class="section-gold-title"><i class="fa-solid fa-images"></i> Album Khoảnh Khắc Cụ Trà & Cụng Ly</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="polaroid-grid">
+        <div class="polaroid-card tilt-left" data-img="assets/memory1.jpg" data-caption="Cụng Ly Vui Vẻ Cùng Anh Em 🍻">
+          <div class="tape-strip"></div>
+          <div class="polaroid-photo"><img src="assets/memory1.jpg?v=2" alt="Cụng Ly Vui Vẻ Cùng Anh Em" /></div>
+          <div class="polaroid-caption">Cụng Ly Vui Vẻ Cùng Anh Em 🍻</div>
+        </div>
+
+        <div class="polaroid-card tilt-right" data-img="assets/memory2.jpg" data-caption="Anh Em Khăng Khít 📸">
+          <div class="tape-strip"></div>
+          <div class="polaroid-photo"><img src="assets/memory2.jpg?v=2" alt="Anh Em Khăng Khít" /></div>
+          <div class="polaroid-caption">Anh Em Khăng Khít 📸</div>
+        </div>
+
+        <div class="polaroid-card tilt-straight" data-img="assets/memory3.jpg" data-caption="Kỷ Niệm Tuổi 23 Rực Rỡ 💖">
+          <div class="tape-strip"></div>
+          <div class="polaroid-photo"><img src="assets/memory3.jpg?v=2" alt="Kỷ Niệm Tuổi 23 Rực Rỡ" /></div>
+          <div class="polaroid-caption">Kỷ Niệm Tuổi 23 Rực Rỡ 💖</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Nguyễn Thanh Tâm (06/10/2003) • Hẹn gặp bạn lúc 19:30 ngày 03/10 tại Ốc Đêm Chú Kiệt 5 Garden! 🥂</p>
+    </footer>
+
+  </main>
+
+
+  <!-- ================= LIGHTBOX MODAL ================= -->
+  <div id="lightbox-modal" class="modal-overlay hidden">
+    <div class="lightbox-content">
+      <button class="modal-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+      <img id="lightbox-img" src="" alt="Full Memory Photo" />
+      <p id="lightbox-caption" class="lightbox-caption-text"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
